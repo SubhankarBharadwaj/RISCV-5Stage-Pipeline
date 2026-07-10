@@ -19,12 +19,10 @@
 `include "hazard_unit.v"
 module processor(
 
-    // Declaration of I/O
     input wire clk,
     input wire reset
 );
 
-    // Declaration of Interim Wires
     wire pc_srcE, reg_writeW, reg_writeE, alu_srcE, mem_writeE,branchE, reg_writeM, mem_writeM,jumpE;
     wire[1:0] result_srcE,result_srcM,result_srcW;
     wire [2:0] alu_controlE;
@@ -35,8 +33,7 @@ module processor(
     wire [1:0] forwardBE, forwardAE;
     wire stallf,stalld,flushE,flushD;
 
-    // Module Initiation
-    // Fetch Stage
+
     fetch_cycle Fetch (
                         .clk(clk),
                         .reset(reset),
@@ -51,7 +48,7 @@ module processor(
 
                     );
 
-    // Decode Stage
+    
     decode_cycle Decode (
                         .clk(clk), 
                         .reset(reset), 
@@ -79,7 +76,7 @@ module processor(
                         .flushE(flushE)
                     );
 
-    // Execute Stage
+    
     execute_cycle Execute (
                         .clk(clk), 
                         .reset(reset), 
@@ -110,7 +107,7 @@ module processor(
                         .forwardBE(forwardBE)
                     );
     
-    // Memory Stage
+    
     memory_cycle Memory (
                         .clk(clk), 
                         .reset(reset), 
@@ -129,7 +126,7 @@ module processor(
                         .read_dataW(read_dataW)
                     );
 
-    // Write Back Stage
+    
     wb_cycle WriteBack (
                         .clk(clk), 
                         .reset(reset), 
@@ -140,7 +137,7 @@ module processor(
                         .resultW(resultW)
                     );
 
-    // Hazard Unit
+    
     hazard_unit hazard_block (
                         .reset(reset), 
                         .reg_writeM(reg_writeM), 
