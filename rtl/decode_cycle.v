@@ -34,7 +34,7 @@ wire [2:0] alu_controlDw;
 wire [4:0] rs1Dw,rs2Dw, rdDw;
 wire[31:0] rd1_Dw, rd2_Dw,imm_ext_Dw;
 
-    // Declaration of Interim Register
+
 reg reg_writeDr, alu_srcDr, mem_writeDr, branchDr, jumpDr;
 reg [1:0] result_srcDr;
 reg [2:0] alu_controlDr;
