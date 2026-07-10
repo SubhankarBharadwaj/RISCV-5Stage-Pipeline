@@ -1,4 +1,4 @@
-                                                           RISC-V-32I-5-Stage-Pipeline
+RISC-V-32I-5-Stage-Pipeline
 This project is a 5-stage pipelined RV32I processor implemented in Verilog. I built it to gain a deeper understanding of pipelined processor design and the hardware mechanisms involved in executing instructions efficiently.
 Before starting the project, to understand ISA, pipelining, hazards and all technicalities, involved in this project, I used the book-'Digital Design and Computer Architecture Risc-V edition', as my primary resource.
 The processor follows the classic IF–ID–EX–MEM–WB pipeline and includes data forwarding, load-use hazard detection, and control hazard handling for branch and jump instructions. The design was verified using custom test programs and simulated using Icarus Verilog with GTKWave.
