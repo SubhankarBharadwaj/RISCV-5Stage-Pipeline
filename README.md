@@ -5,30 +5,35 @@ The processor follows the classic IF–ID–EX–MEM–WB pipeline and includes 
 
 Features involved are:
 
-    1)RTL Design with seperate files for each element
-
-    2)Data forwarding for dependent instructions
-    
-    3)Load use hazard detection with pipeline stalling 
-
-    4)Branch and jump handling using pipeline flushing 
-
-    5)Verified using multiple test programs and waveform analysis in GTKWave
+- RTL Design with seperate files for each element
+- Data forwarding for dependent instructions
+- Load use hazard detection with pipeline stalling 
+- Branch and jump handling using pipeline flushing 
+- Verified using multiple test programs and waveform analysis in GTKWave
 
 It supports Arithmetic Instructions(add,sub,and,or,addi), Memory instructions(lw,sw),Branch instructions(beq) and Jump instructions(jal).
 
 The processor follows the classic 5-stage RISC-V pipeline: - 
 
-    1)Instruction Fetch (IF) 
-    2)Instruction Decode (ID) 
-    3)Execute (EX) 
-    4)Memory Access (MEM) 
-    5)Write Back (WB)
+- Instruction Fetch (IF) 
+- Instruction Decode (ID) 
+- Execute (EX) 
+- Memory Access (MEM) 
+- Write Back (WB)
 
 To maintain correct execution in the pipeline, the processor includes a hazard unit that handles both data and control hazards. – 
 
-    1)Data forwarding from the EX/MEM and MEM/WB stages to reduce unnecessary stalls. 
-    2)Detection of load-use hazards with automatic pipeline stalling. 
-    3) Pipeline flushing for taken branches and jump instructions.
+- Data forwarding from the EX/MEM and MEM/WB stages to reduce unnecessary stalls. 
+- Detection of load-use hazards with automatic pipeline stalling. 
+- Pipeline flushing for taken branches and jump instructions.
 
 The processor was verified using custom test programs in Icarus Verilog and GTKWave.
+
+Some possible extensions to this processor include:
+
+- Support for the complete RV32I instruction set
+- Branch prediction
+- Instruction and data caches
+- Exception and interrupt handling
+- FPGA implementation
+- SystemVerilog-based verification
